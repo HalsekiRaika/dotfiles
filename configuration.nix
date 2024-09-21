@@ -80,7 +80,7 @@
   services.openssh.enable = true;
 
   # Docker
-  virtualization.docker = {
+  virtualisation.docker = {
     enable = true;
     rootless.enable = true;
   };
