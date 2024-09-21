@@ -53,7 +53,9 @@
     isNormalUser = true;
     description = "rechella";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      rustup
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDEP/araSuYTT4OYiPKoQKKFS+sNebVXaI8qmLw4rK1A"
     ];
