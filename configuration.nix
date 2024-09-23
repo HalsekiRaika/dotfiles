@@ -14,8 +14,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "development-server"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  networking = {
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ "tailscale0" ];
+    };
+  };
+
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
